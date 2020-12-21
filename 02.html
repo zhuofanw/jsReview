@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<script>
+		// function Person(name, age) {
+		// 	this.name = name;
+		// 	this.age = age;
+		// }
+
+		// Person.prototype.toString = function () {
+		// 	return "Person[name=" + this.name + ",age=" + this.age + "]";
+		// };
+
+		// var person1 = new Person("Frank", 18);
+		// var person2 = new Person("David", 3);
+		// var person3 = new Person("Lilia", 38);
+		// var person4 = new Person("Tracy", 15);
+		// var person5 = new Person("Billy", 55);
+
+		// var arr = [person1, person2, person3, person4, person5];
+
+		// console.log(arr.slice(0, 2));
+
+		// function getAdult(arr) {
+		// 	var newArr = [];
+		// 	for (i = 0; i < arr.length; i++) {
+		// 		if (arr[i].age >= 18) {
+		// 			newArr.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return newArr;
+		// }
+
+		// var result = getAdult(perArr);
+		// console.log(result);
+		// var arr = [1, 2, 3, 4, 2, 2, 1, 3, 4, 2, 5];
+		// for (var i = 0; i < arr.length; i++) {
+		// 	for (var j = i + 1; j < arr.length; j++) {
+		// 		if (arr[i] == arr[j]) {
+		// 			arr.splice(j, 1);
+		// 			j--;
+		// 			length--;
+		// 		}
+		// 	}
+		// }
+		// console.log(arr);
+
+		// var arr = [3, 4, 11, 2, 5];
+
+		// console.log(
+		// 	arr.sort(function (a, b) {
+		// 		return a - b;
+		// 	})
+		// );
+
+		function fn() {}
+		/*
+            call()和apply()都是函数对象的方法，需要通过函数对象来调用
+            当对函数调用call()和apply()都会调用函数执行
+                fn() = fn.call() = fn.apply()
+            在调用call()和apply()可以将一个对象指定为第一参数，
+            此时这个对象会成为函数执行时的this
+
+            call()方法可以将实参在对象之后依次传递fn.call(obj,2,3,)
+            apply()方法需要将实参封装到一个数组中统一传递fn.apply(obj,[2,3])
+
+            this的情况:
+                1.以函数形式调用时，this永远都是window
+                2.以方法形式调用时，this是调用方法的对象
+                3.以构造函数调用时，this是新构造的对象
+                4.使用call和apply调用时，this为第一个参数对象
+        */
+		var obj1 = {
+			name: "obj1",
+			sayName: function () {
+				alert(this.name);
+			},
+		};
+		var obj2 = { name: "obj2" };
+
+		obj1.sayName.apply(obj2);
+	</script>
+	<body></body>
+</html>
