@@ -6,8 +6,7 @@
 		<title>Document</title>
 	</head>
 	<script>
-		/*
-        arguments
+		/*arguments
         在调用函数时，浏览器每次都会传递进两个隐含的参数
             1.函数的上下文对象this
             2.封装实参的对象arguments
@@ -18,46 +17,44 @@
             -里面有个属性叫做callee,这个属性对应一个函数对象，就是当前正在指向的函数对象
          
         */
-		// function fn(a, b) {
-		// 	console.log(arguments.callee);
-		// }
-		// fn("hello", true, 0);
+		function fn(a, b) {
+			console.log(arguments.callee);
+		}
+		fn("hello", true, 0);
 
-		/*
-        Date()对象
-        */
-		// var d = new Date();
-		// var d2 = new Date("11/8/1995 11:30:0");
-		// console.log(d);
-		// console.log(d2.getDay()); //返回0-6 0表示周日
-		// console.log(d2.getMonth()); //返回0-11 0表示1月 11表示12月
+		//Date()对象
+		var d = new Date();
+		var d2 = new Date("11/8/1995 11:30:0");
+		console.log(d);
+		console.log(d2.getDay()); //返回0-6 0表示周日
+		console.log(d2.getMonth()); //返回0-11 0表示1月 11表示12月
 
-		// ////时间戳，指的是从格林威治1970年1月1日，到当前时间ms数
-		// var time = d2.getTime();
-		// var time1 = d.getTime();
-		// var time2 = Date.now();
-		// console.log(time);
-		// console.log(time1);
-		// console.log(time2);
+		//时间戳，指的是从格林威治1970年1月1日，到当前时间ms数
+		var time = d2.getTime();
+		var time1 = d.getTime();
+		var time2 = Date.now();
+		console.log(time);
+		console.log(time1);
+		console.log(time2);
 
-		// console.log(Math.PI);
-		// console.log(Math.ceil(1.1)); //向上取整
-		// console.log(Math.floor(1.8)); //向下取整
-		// console.log(Math.round(1.3)); //四舍五入
-		// console.log(Math.round(Math.random() * 10));
+		console.log(Math.PI);
+		console.log(Math.ceil(1.1)); //向上取整
+		console.log(Math.floor(1.8)); //向下取整
+		console.log(Math.round(1.3)); //四舍五入
+		console.log(Math.round(Math.random() * 10));
 
-		// str = "abc bcd efg hij";
+		str = "abc bcd efg hij";
 
-		// var result = str.charAt(2); //str[2];
+		var result = str.charAt(2); //str[2];
 
-		// result = String.fromCharCode(0x2682);
-		// var a = str.indexOf("h", 2); //从index为2之后查找h的索引
+		result = String.fromCharCode(0x2682);
+		var a = str.indexOf("h", 2); //从index为2之后查找h的索引
 
-		// result = str.lastIndexOf("h");//从末尾index开始查找h的索引
+		result = str.lastIndexOf("h"); //从末尾index开始查找h的索引
 
-		// result = str.split(" "); //str转化为array 根据参数来拆分
+		result = str.split(" "); //str转化为array 根据参数来拆分
 
-		// console.log(result);
+		console.log(result);
 
 		/*
             正则表达式
@@ -67,23 +64,23 @@
 		//    创建正则表达式对象
 		//    参数1：正则表达式
 		//    参数2：匹配模式  i忽略大小写 g全局匹配模式
-		// var reg = new RegExp(/D@/, "i"); //检查字符串中是否含有d@并忽略大小写
+		var reg = new RegExp(/D@/, "i"); //检查字符串中是否含有d@并忽略大小写
 
-		// var str = "a";
+		var str = "a";
 
-		// console.log(reg.test("cdd@ad1ew"));
+		console.log(reg.test("cdd@ad1ew"));
 
-		// var reg = /a[bde]c/;
+		var reg = /a[bde]c/;
 
-		// console.log(reg.test("afc"));
+		console.log(reg.test("afc"));
 
-		// var reg = /b/i;
-		// console.log(reg.test("abc"));
+		var reg = /b/i;
+		console.log(reg.test("abc"));
 
-		// var str = "hello abc hello aec ABC";
+		var str = "hello abc hello aec ABC";
 
-		// // var result = str.match(/a[bef]c/gi);
-		// var result = str.replace(/a/gi, "");
+		// var result = str.match(/a[bef]c/gi);
+		var result = str.replace(/a/gi, "");
 
 		/*
         正则表达式量词
@@ -106,17 +103,18 @@
             -\b 单词边界
             -\B 除了单词边界
         */
-		// var reg = /\bchild\b/;
+		var reg = /\bchild\b/;
 
-		// console.log(reg.test("child"));
+		console.log(reg.test("child"));
 
-		// var str = "       ab    c      ";
-		// //去除开头的空格
-		// var str = str.replace(/^\s*/, "");
-		// //去除开头和结尾的空格
-		// var str = str.replace(/\s* | \s*$/g, "");
-		// console.log(str);
+		var str = "       ab    c      ";
+		//去除开头的空格
+		var str = str.replace(/^\s*/, "");
+		//去除开头和结尾的空格
+		var str = str.replace(/\s* | \s*$/g, "");
+		console.log(str);
 
+		// email 正则表达式
 		var emailExp = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
 		var email = "abc@abc.com";
 		console.log(emailExp.test(email));
