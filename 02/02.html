@@ -69,10 +69,10 @@
             apply()方法需要将实参封装到一个数组中统一传递fn.apply(obj,[2,3])
 
             this的情况:
-                1.以函数形式调用时，this永远都是window
-                2.以方法形式调用时，this是调用方法的对象
-                3.以构造函数调用时，this是新构造的对象
-                4.使用call和apply调用时，this为第一个参数对象
+            1.以函数形式调用时，this永远都是window
+            2.以方法形式调用时，this是调用方法的对象
+            3.以构造函数调用时，this是新构造的对象
+            4.使用call和apply调用时，this为第一个参数对象
         */
 		var obj1 = {
 			name: "obj1",
