@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		#box1 {
+			width: 200px;
+			height: 200px;
+			background-color: yellowgreen;
+		}
+		#s1 {
+			background-color: yellow;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var body = document.getElementsByTagName("body")[0];
+			var body = document.body;
+			var html = document.documentElement;
+			console.log(html);
+			var s1 = document.getElementById("s1");
+			// s1.onclick = function () {};
+			var count = document.getElementById("count");
+			var i = 1;
+			var timer = setInterval(() => {
+				i < 11 ? (count.innerHTML = i++) : clearInterval(timer);
+			}, 1000);
+			console.log(timer);
+			var jsonObj = '{"name" : "frank", "age":18, "gender":"male"}';
+			var jsonArr = '[1,2,3,true,"frank"]';
+			//JSON 转 obj JSON.parse();
+			//JSON 转 array JSON.parse();
+			var obj = JSON.parse(jsonObj);
+			var arr = JSON.parse(jsonArr);
+			console.log(obj);
+			console.log(obj.name);
+			console.log(arr);
+			console.log(arr[4]);
+			var obj = { name: "Franky", age: 26, gender: "male" };
+			var json = JSON.stringify(obj);
+			console.log(json);
+			console.log(typeof json); // string
+		};
+	</script>
+	<body>
+		<h1 id="count"></h1>
+	</body>
+</html>
